@@ -9,13 +9,15 @@ app.use(express.json());
 // MongoDB connection
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/notesDB")
+mongoose.connect("mongodb+srv://NoteUser:MyPassword123@cluster0.m9ehtlt.mongodb.net/notesDB?retryWrites=true&w=majority")
 .then(()=>console.log("MongoDB Connected"))
 .catch(err=>console.log(err));
 
 const noteRoutes = require("./routes/notes");
 app.use("/notes", noteRoutes);
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
