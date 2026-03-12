@@ -10,7 +10,7 @@ function App() {
   const [editingTitle, setEditingTitle] = useState("");
   const [editingContent, setEditingContent] = useState("");
 
-  const API = "http://localhost:5000/notes";
+  const API = "https://notes-app-ibs1.onrender.com";
 
   // get notes
   const fetchNotes = async () => {
