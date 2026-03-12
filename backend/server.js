@@ -9,7 +9,7 @@ app.use(express.json());
 // MongoDB connection
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://NoteUser:chiku2002123@cluster0.m9ehtlt.mongodb.net/notesDB?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://NoteUser:chiku2002@cluster0.m9ethlt.mongodb.net/?appName=Cluster0")
 .then(()=>console.log("MongoDB Connected"))
 .catch(err=>console.log(err));
 
