@@ -13,8 +13,8 @@ A full-stack notes application where users can create, edit, and delete notes.
 
 ## Live Demo
 
-Frontend: https://your-vercel-url  
-Backend API: https://your-render-url
+Frontend: https://notes-app-theta-lemon.vercel.app/
+Backend API: https://notes-app-dzi9.onrender.com
 
 ## Features
 
