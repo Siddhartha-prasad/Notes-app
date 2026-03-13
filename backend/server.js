@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 
@@ -9,7 +10,7 @@ app.use(express.json());
 // MongoDB connection
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://NoteUser:chiku2002@cluster0.m9ethlt.mongodb.net/?appName=Cluster0")
+mongoose.connect(process.env.MONGO_URI)
 .then(()=>console.log("MongoDB Connected"))
 .catch(err=>console.log(err));
 
@@ -25,3 +26,6 @@ app.listen(PORT, () => {
 app.get("/", (req, res) => {
   res.send("Notes API is running 🚀");
 });
+
+const errorHandler = require("./middleware/errorMiddleware");
+app.use(errorHandler);
